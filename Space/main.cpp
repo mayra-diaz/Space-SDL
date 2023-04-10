@@ -1,14 +1,20 @@
-//
-//  main.cpp
-//  Space
-//
-//  Created by Mayra Díaz Tramontana on 10/04/23.
-//
+// ----------------------------------------------------------------
+// From Game Programming in C++ by Sanjay Madhav
+// Copyright (C) 2017 Sanjay Madhav. All rights reserved.
+// 
+// Released under the BSD License
+// See LICENSE in root directory for full details.
+// ----------------------------------------------------------------
 
-#include <iostream>
+#include "Game.h"
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+int main(int argc, char** argv) {
+    // Instantiate a Game and run it.
+	Game game("../../../../../../../../SDL Projects/Space/Space/");
+	bool success = game.Initialize();
+	if (success) {
+		game.RunLoop();
+	}
+	game.Shutdown();
+	return 0;
 }
